@@ -29,7 +29,7 @@ package com.aoindustries.servlet.firewall.api;
  * <p>
  * Please note that a rule can be both a {@link Matcher} and a {@link Action}.
  * When it is both, its {@link Matcher} aspect is handled before its {@link Action}.
- * At this time none of the stock api are implemented in this fashion.  This
+ * At this time none of the stock rules are implemented in this fashion.  This
  * type of pattern begins to resemble "routes", which are beyond the scope of
  * "firewall" and already exist in too many forms within the Java web application
  * development world.

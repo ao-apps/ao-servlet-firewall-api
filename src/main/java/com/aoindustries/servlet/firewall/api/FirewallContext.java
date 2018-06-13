@@ -26,7 +26,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 
 /**
- * Invocation of {@link Rule api} must be done through the firewall context.
+ * Invocation of {@link Rule rules} must be done through the firewall context.
  * This is done to support firewall hooks, such as TRACE.
  */
 public interface FirewallContext {

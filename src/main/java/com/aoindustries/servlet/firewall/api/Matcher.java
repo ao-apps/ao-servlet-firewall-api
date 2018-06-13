@@ -31,10 +31,10 @@ import javax.servlet.http.HttpServletRequest;
  * <p>
  * A matcher must not have any side-effects on the context, request, or response.
  * It may only have side-effects outside of the request processing, such as internal statistics on its own use.
- * Statistics providing api, however, should be implemented as {@link Result#CONTINUE non-terminating} {@link Action actions}.
+ * Statistics providing rules, however, should be implemented as {@link Result#CONTINUE non-terminating} {@link Action actions}.
  * </p>
  * <p>
- * It is possible for matchers to have nested api (including both matchers and/or actions).
+ * It is possible for matchers to have nested rules (including both matchers and/or actions).
  * </p>
  *
  * @see  Matchers

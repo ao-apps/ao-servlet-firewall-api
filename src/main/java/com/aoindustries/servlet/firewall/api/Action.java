@@ -32,9 +32,9 @@ import javax.servlet.http.HttpServletResponse;
  * An action is a rule that has side-effects.  It has access to the
  * {@link HttpServletResponse} and {@link FilterChain} of the request.
  * <p>
- * It is possible for actions to have nested api (including both matchers and/or actions).
+ * It is possible for actions to have nested rules (including both matchers and/or actions).
  * This might be most appropriate when an action wraps the request or response objects before
- * performing additional api, such as a "noSession" implementation might do.
+ * performing additional rules, such as a "noSession" implementation might do.
  * </p>
  *
  * @see  Actions
