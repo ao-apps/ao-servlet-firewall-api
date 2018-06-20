@@ -62,7 +62,7 @@ public interface FirewallContext {
 	 */
 	void removeAttribute(String name);
 
-	// TODO: Java 1.8: @Functional
+	// Java 1.8: @Functional
 	interface Callable<V> extends java.util.concurrent.Callable<V> {
 		@Override
 		V call() throws IOException, ServletException;
@@ -79,7 +79,7 @@ public interface FirewallContext {
 	// TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
 	<V> V setAttribute(String name, Object object, Callable<V> callable) throws IOException, ServletException;
 
-	// TODO: Java 1.8: @Functional
+	// Java 1.8: @Functional
 	interface Runnable {
 		void run() throws IOException, ServletException;
 	}

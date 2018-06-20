@@ -45,7 +45,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * TODO: Is this redundant with https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/web/util/matcher/package-summary.html?
  */
-// TODO: Java 1.8: @Functional
+// Java 1.8: @Functional
 public interface Matcher extends Rule {
 
 	enum Result {
