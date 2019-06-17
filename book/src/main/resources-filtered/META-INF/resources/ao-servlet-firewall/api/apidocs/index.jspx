@@ -39,5 +39,4 @@ along with ao-servlet-firewall-api.  If not, see <http://www.gnu.org/licenses />
 		datePublished="2018-06-12T21:34:00-0500"
 		dateModified="${ao:getLastModified('index.html')}"
 	/>
-	<!-- TODO: Pick-up javadocs version, not pom version, in title, here and elsewhere -->
 </jsp:root>
