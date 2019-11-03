@@ -41,7 +41,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * TODO: actions should be in own submodule?
  */
-// Java 1.8: @Functional
+@FunctionalInterface
 public interface Action extends Rule {
 
 	enum Result {
