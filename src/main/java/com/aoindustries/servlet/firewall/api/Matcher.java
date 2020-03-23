@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018  AO Industries, Inc.
+ * Copyright (C) 2018, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,13 +31,11 @@ import javax.servlet.http.HttpServletRequest;
  * <p>
  * A matcher must not have any side-effects on the context, request, or response.
  * It may only have side-effects outside of the request processing, such as internal statistics on its own use.
- * Statistics providing rules, however, should be implemented as {@link Result#CONTINUE non-terminating} {@link Action actions}.
+ * Statistics providing rules, however, should be implemented as {@link Action.Result#CONTINUE non-terminating} {@link Action actions}.
  * </p>
  * <p>
  * It is possible for matchers to have nested rules (including both matchers and/or actions).
  * </p>
- *
- * @see  Matchers
  *
  * TODO: Include pathInfo in servletPath regarding path space lookups?
  *
@@ -78,9 +76,9 @@ public interface Matcher extends Rule {
 	 *
 	 * @param request  The request being matched
 	 *
-	 * @return  Returns {@link Result#TERMINATE} propagated from when a nested terminal action is performed,
-	 *          {@link Result#MATCH} when the rule matches but no nested terminal action is performed (non-terminal might have been performed),
-	 *          or {@link Result#NO_MATCH} when the rule is not matched (nested non-terminal actions might still have been performed, depending on matcher implementation).
+	 * @return  Returns {@link Matcher.Result#TERMINATE} propagated from when a nested terminal action is performed,
+	 *          {@link Matcher.Result#MATCH} when the rule matches but no nested terminal action is performed (non-terminal might have been performed),
+	 *          or {@link Matcher.Result#NO_MATCH} when the rule is not matched (nested non-terminal actions might still have been performed, depending on matcher implementation).
 	 */
 	Result perform(FirewallContext context, HttpServletRequest request) throws IOException, ServletException;
 }

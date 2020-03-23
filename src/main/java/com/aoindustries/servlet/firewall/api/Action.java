@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018  AO Industries, Inc.
+ * Copyright (C) 2018, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,8 +37,6 @@ import javax.servlet.http.HttpServletResponse;
  * performing additional rules, such as a "noSession" implementation might do.
  * </p>
  *
- * @see  Actions
- *
  * TODO: actions should be in own submodule?
  */
 @FunctionalInterface
@@ -71,9 +69,9 @@ public interface Action extends Rule {
 	 *
 	 * @param chain  The current filter chain
 	 *
-	 * @return  Returns {@link Result#TERMINATE} for a terminating action that has handled the request/response
-	 *          or {@link Result#CONTINUE} for a non-terminating action.
-	 *          {@link Result#MATCH} and {@link Result#NO_MATCH} are not valid returns from an action.
+	 * @return  Returns {@link Action.Result#TERMINATE} for a terminating action that has handled the request/response
+	 *          or {@link Action.Result#CONTINUE} for a non-terminating action.
+	 *          {@link Matcher.Result#MATCH} and {@link Matcher.Result#NO_MATCH} are not valid returns from an action.
 	 */
 	Result perform(FirewallContext context, HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException;
 }
