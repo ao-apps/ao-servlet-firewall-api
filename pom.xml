@@ -55,9 +55,24 @@ along with ao-servlet-firewall-api.  If not, see <http://www.gnu.org/licenses />
 		<url>https://github.com/aoindustries/ao-servlet-firewall-api/issues</url>
 	</issueManagement>
 
+	<profiles>
+		<profile>
+			<id>offlineLinks</id><activation><file><exists>src/main/java</exists></file></activation>
+			<!-- <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId> -->
+			<!-- Direct -->
+			<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
+
+			<!-- <groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId> -->
+			<!-- Direct -->
+			<!-- Java EE: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
+		</profile>
+	</profiles>
+
 	<dependencyManagement>
 		<dependencies>
-			<!-- Java EE -->
+			<!-- Direct -->
+			<!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
+			<!-- BOM -->
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>javaee-web-api-bom</artifactId><version>6.0.1${POST-SNAPSHOT}</version>
 				<type>pom</type>
@@ -67,10 +82,9 @@ along with ao-servlet-firewall-api.  If not, see <http://www.gnu.org/licenses />
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- Java EE -->
+		<!-- Direct -->
 		<dependency>
 			<groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
