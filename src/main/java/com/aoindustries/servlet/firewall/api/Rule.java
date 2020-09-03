@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018  AO Industries, Inc.
+ * Copyright (C) 2018, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,6 +35,7 @@ package com.aoindustries.servlet.firewall.api;
  * development world.
  * </p>
  */
+@SuppressWarnings("MarkerInterface")
 public interface Rule { // Expected marker interface
 
 	// There are currently no common methods between matcher and action.
