@@ -37,6 +37,7 @@ along with ao-servlet-firewall-api.  If not, see <http://www.gnu.org/licenses />
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2018-06-12T21:32:54-05:00"
+		dateModified="2021-07-21T17:59:08-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -46,11 +47,20 @@ along with ao-servlet-firewall-api.  If not, see <http://www.gnu.org/licenses />
 				artifactId="@{documented.artifactId}"
 				repository="@{nexusUrl}content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
-			>
-				<ol>
-					<li>New project for base API for servlet-based application request filtering.</li>
-				</ol>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="0.1.0"
+			datePublished="2021-07-21T17:59:08-05:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>New project for base API for servlet-based application request filtering.</li>
+			</ul>
+		</changelog:release>
 	</core:page>
 </jsp:root>
