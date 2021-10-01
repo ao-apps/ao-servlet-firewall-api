@@ -33,6 +33,7 @@ import javax.servlet.ServletException;
  * implementations are not necessarily thread-safe.
  * </p>
  */
+// TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
 public interface FirewallContext {
 
 	/**
@@ -62,7 +63,8 @@ public interface FirewallContext {
 	 */
 	void removeAttribute(String name);
 
-	// Java 1.8: @Functional
+	// TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
+	@FunctionalInterface
 	interface Callable<V> extends java.util.concurrent.Callable<V> {
 		@Override
 		V call() throws IOException, ServletException;
@@ -76,10 +78,11 @@ public interface FirewallContext {
 	 *
 	 * @param object  When {@code null}, this is the equivalent of calling {@link #removeAttribute(java.lang.String)}
 	 */
+	// TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
 	// TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
 	<V> V setAttribute(String name, Object object, Callable<V> callable) throws IOException, ServletException;
 
-	// Java 1.8: @Functional
+	@FunctionalInterface
 	interface Runnable {
 		void run() throws IOException, ServletException;
 	}
@@ -92,6 +95,7 @@ public interface FirewallContext {
 	 *
 	 * @param object  When {@code null}, this is the equivalent of calling {@link #removeAttribute(java.lang.String)}
 	 */
+	// TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
 	// TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
 	void setAttribute(String name, Object object, Runnable runnable) throws IOException, ServletException;
 
