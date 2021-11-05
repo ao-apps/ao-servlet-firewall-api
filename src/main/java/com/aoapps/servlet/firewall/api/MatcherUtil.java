@@ -29,9 +29,10 @@ import javax.servlet.ServletException;
 /**
  * Utilities to help in {@link Matcher} implementations.
  */
-public class MatcherUtil {
+public abstract class MatcherUtil {
 
-	private MatcherUtil() {}
+	/** Make no instances. */
+	private MatcherUtil() {throw new AssertionError();}
 
 	/**
 	 * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
