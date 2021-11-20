@@ -86,9 +86,15 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
 	</issueManagement>
 
 	<ciManagement>
+		<system>Jenkins</system>
+		<url>https://jenkins.aoindustries.com/job/ao/job/oss/job/servlet-firewall/job/api/</url>
+	</ciManagement>
+	<!-- Only one allowed in POM:
+	<ciManagement>
 		<system>GitHub Actions</system>
 		<url>https://github.com/ao-apps/ao-servlet-firewall-api/actions</url>
 	</ciManagement>
+	-->
 
 	<repositories>
 		<!-- Repository required here, too, so can find parent -->
@@ -110,7 +116,7 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
 			<id>offlineLinks</id><activation><file><exists>src/main/java</exists></file></activation>
 			<!-- <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId> -->
 			<!-- Direct -->
-			<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
+			<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
 
 			<!-- <groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId> -->
 			<!-- Direct -->
