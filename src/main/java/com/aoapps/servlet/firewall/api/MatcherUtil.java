@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,7 +29,7 @@ import javax.servlet.ServletException;
 /**
  * Utilities to help in {@link Matcher} implementations.
  */
-public abstract class MatcherUtil {
+public final class MatcherUtil {
 
 	/** Make no instances. */
 	private MatcherUtil() {throw new AssertionError();}
