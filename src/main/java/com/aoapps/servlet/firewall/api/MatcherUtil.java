@@ -20,6 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 package com.aoapps.servlet.firewall.api;
 
 import com.aoapps.servlet.firewall.api.Matcher.Result;
