@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,7 @@
  * along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoapps.servlet.firewall.api {
-	exports com.aoapps.servlet.firewall.api;
-	// Direct
-	requires javax.servlet.api; // <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
+  exports com.aoapps.servlet.firewall.api;
+  // Direct
+  requires javax.servlet.api; // <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
 }

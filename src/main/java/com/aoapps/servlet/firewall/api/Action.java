@@ -43,36 +43,36 @@ import javax.servlet.http.HttpServletResponse;
 @FunctionalInterface
 public interface Action extends Rule {
 
-	enum Result {
-		/**
-		 * Indicates an action has been performed, but it is non-terminal and rule processing must continue.
-		 */
-		CONTINUE,
+  enum Result {
+    /**
+     * Indicates an action has been performed, but it is non-terminal and rule processing must continue.
+     */
+    CONTINUE,
 
-		/**
-		 * Indicates that a terminal action has been performed.  Rule processing must stop.
-		 * Valid from either {@link Matcher} or {@link Action}, however it must originate only from
-		 * an {@link Action} and may be propagated up the stack through {@link Matcher}.
-		 * We are favoring this propagation of return over exceptions.
-		 *
-		 * @see  Matcher.Result#TERMINATE
-		 */
-		TERMINATE
-	}
+    /**
+     * Indicates that a terminal action has been performed.  Rule processing must stop.
+     * Valid from either {@link Matcher} or {@link Action}, however it must originate only from
+     * an {@link Action} and may be propagated up the stack through {@link Matcher}.
+     * We are favoring this propagation of return over exceptions.
+     *
+     * @see  Matcher.Result#TERMINATE
+     */
+    TERMINATE
+  }
 
-	/**
-	 * Performs the desired action.
-	 * This may have side-effects on the context, request, or response.
-	 *
-	 * @param request  The request being matched
-	 *
-	 * @param response  The current response
-	 *
-	 * @param chain  The current filter chain
-	 *
-	 * @return  Returns {@link Action.Result#TERMINATE} for a terminating action that has handled the request/response
-	 *          or {@link Action.Result#CONTINUE} for a non-terminating action.
-	 *          {@link Matcher.Result#MATCH} and {@link Matcher.Result#NO_MATCH} are not valid returns from an action.
-	 */
-	Result perform(FirewallContext context, HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException;
+  /**
+   * Performs the desired action.
+   * This may have side-effects on the context, request, or response.
+   *
+   * @param request  The request being matched
+   *
+   * @param response  The current response
+   *
+   * @param chain  The current filter chain
+   *
+   * @return  Returns {@link Action.Result#TERMINATE} for a terminating action that has handled the request/response
+   *          or {@link Action.Result#CONTINUE} for a non-terminating action.
+   *          {@link Matcher.Result#MATCH} and {@link Matcher.Result#NO_MATCH} are not valid returns from an action.
+   */
+  Result perform(FirewallContext context, HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException;
 }

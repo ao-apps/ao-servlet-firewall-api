@@ -39,6 +39,6 @@ package com.aoapps.servlet.firewall.api;
 @SuppressWarnings("MarkerInterface")
 public interface Rule { // Expected marker interface
 
-	// There are currently no common methods between matcher and action.
+  // There are currently no common methods between matcher and action.
 
 }

@@ -32,46 +32,52 @@ import javax.servlet.ServletException;
  */
 public final class MatcherUtil {
 
-	/** Make no instances. */
-	private MatcherUtil() {throw new AssertionError();}
+  /** Make no instances. */
+  private MatcherUtil() {
+    throw new AssertionError();
+  }
 
-	/**
-	 * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
-	 * This is also used for "otherwise" when the matcher does not match.
-	 */
-	public static Result callRules(FirewallContext context, Iterable<? extends Rule> rules, Result result) throws IOException, ServletException {
-		for(Rule rule : rules) {
-			if(rule instanceof Matcher) {
-				Result matcherResult = context.call((Matcher)rule);
-				if(matcherResult == Result.TERMINATE) return Result.TERMINATE;
-			}
-			if(rule instanceof Action) {
-				Action.Result actionResult = context.call((Action)rule);
-				if(actionResult == Action.Result.TERMINATE) return Result.TERMINATE;
-			}
-		}
-		return result;
-	}
+  /**
+   * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
+   * This is also used for "otherwise" when the matcher does not match.
+   */
+  public static Result callRules(FirewallContext context, Iterable<? extends Rule> rules, Result result) throws IOException, ServletException {
+    for (Rule rule : rules) {
+      if (rule instanceof Matcher) {
+        Result matcherResult = context.call((Matcher)rule);
+        if (matcherResult == Result.TERMINATE) {
+          return Result.TERMINATE;
+        }
+      }
+      if (rule instanceof Action) {
+        Action.Result actionResult = context.call((Action)rule);
+        if (actionResult == Action.Result.TERMINATE) {
+          return Result.TERMINATE;
+        }
+      }
+    }
+    return result;
+  }
 
-	/**
-	 * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
-	 */
-	public static Result doMatches(boolean matches, FirewallContext context, Iterable<? extends Rule> rules) throws IOException, ServletException {
-		if(matches) {
-			return callRules(context, rules, Result.MATCH);
-		} else {
-			return Result.NO_MATCH;
-		}
-	}
+  /**
+   * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
+   */
+  public static Result doMatches(boolean matches, FirewallContext context, Iterable<? extends Rule> rules) throws IOException, ServletException {
+    if (matches) {
+      return callRules(context, rules, Result.MATCH);
+    } else {
+      return Result.NO_MATCH;
+    }
+  }
 
-	/**
-	 * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
-	 */
-	public static Result doMatches(boolean matches, FirewallContext context, Iterable<? extends Rule> rules, Iterable<? extends Rule> otherwise) throws IOException, ServletException {
-		if(matches) {
-			return callRules(context, rules, Result.MATCH);
-		} else {
-			return callRules(context, otherwise, Result.NO_MATCH);
-		}
-	}
+  /**
+   * Shared implementation for when matchers match the request and are dispatching to all their nested rules.
+   */
+  public static Result doMatches(boolean matches, FirewallContext context, Iterable<? extends Rule> rules, Iterable<? extends Rule> otherwise) throws IOException, ServletException {
+    if (matches) {
+      return callRules(context, rules, Result.MATCH);
+    } else {
+      return callRules(context, otherwise, Result.NO_MATCH);
+    }
+  }
 }
