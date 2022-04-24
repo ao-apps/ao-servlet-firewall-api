@@ -44,13 +44,13 @@ public final class MatcherUtil {
   public static Result callRules(FirewallContext context, Iterable<? extends Rule> rules, Result result) throws IOException, ServletException {
     for (Rule rule : rules) {
       if (rule instanceof Matcher) {
-        Result matcherResult = context.call((Matcher)rule);
+        Result matcherResult = context.call((Matcher) rule);
         if (matcherResult == Result.TERMINATE) {
           return Result.TERMINATE;
         }
       }
       if (rule instanceof Action) {
-        Action.Result actionResult = context.call((Action)rule);
+        Action.Result actionResult = context.call((Action) rule);
         if (actionResult == Action.Result.TERMINATE) {
           return Result.TERMINATE;
         }
