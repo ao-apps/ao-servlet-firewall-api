@@ -37,12 +37,16 @@ import javax.servlet.http.HttpServletResponse;
  * This might be most appropriate when an action wraps the request or response objects before
  * performing additional rules, such as a "noSession" implementation might do.
  * </p>
- *
+ * <p>
  * TODO: actions should be in own submodule?
+ * </p>
  */
 @FunctionalInterface
 public interface Action extends Rule {
 
+  /**
+   * The set of action results.
+   */
   enum Result {
     /**
      * Indicates an action has been performed, but it is non-terminal and rule processing must continue.

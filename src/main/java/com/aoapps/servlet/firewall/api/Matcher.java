@@ -37,16 +37,22 @@ import javax.servlet.http.HttpServletRequest;
  * <p>
  * It is possible for matchers to have nested rules (including both matchers and/or actions).
  * </p>
- *
+ * <p>
  * TODO: Include pathInfo in servletPath regarding path space lookups?
- *
+ * </p>
+ * <p>
  * TODO: matchers should be in own submodule?
- *
+ * </p>
+ * <p>
  * TODO: Is this redundant with https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/web/util/matcher/package-summary.html?
+ * </p>
  */
 @FunctionalInterface
 public interface Matcher extends Rule {
 
+  /**
+   * The set of matcher results.
+   */
   enum Result {
     /**
      * Indicates no match.

@@ -65,6 +65,9 @@ public interface FirewallContext {
   void removeAttribute(String name);
 
   // TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
+  /**
+   * TODO: Replace with <code>ServletCallable</code> from ao-servlet-util.
+   */
   @FunctionalInterface
   interface Callable<V> extends java.util.concurrent.Callable<V> {
     @Override
@@ -83,6 +86,9 @@ public interface FirewallContext {
   // TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
   <V> V setAttribute(String name, Object object, Callable<V> callable) throws IOException, ServletException;
 
+  /**
+   * TODO: Replace with <code>ServletRunnable</code> from ao-servlet-util.
+   */
   @FunctionalInterface
   interface Runnable {
     void run() throws IOException, ServletException;
