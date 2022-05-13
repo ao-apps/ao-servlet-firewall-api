@@ -24,4 +24,4 @@ module com.aoapps.servlet.firewall.api {
   exports com.aoapps.servlet.firewall.api;
   // Direct
   requires javax.servlet.api; // <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
-} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
+}
