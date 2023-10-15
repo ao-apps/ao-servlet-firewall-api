@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,6 +23,7 @@
 
 package com.aoapps.servlet.firewall.api;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import javax.servlet.ServletException;
 
@@ -69,6 +70,7 @@ public interface FirewallContext {
    * TODO: Replace with <code>ServletCallable</code> from ao-servlet-util.
    */
   @FunctionalInterface
+  @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
   interface Callable<V> extends java.util.concurrent.Callable<V> {
     @Override
     V call() throws IOException, ServletException;
@@ -90,6 +92,7 @@ public interface FirewallContext {
    * TODO: Replace with <code>ServletRunnable</code> from ao-servlet-util.
    */
   @FunctionalInterface
+  @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
   interface Runnable {
     void run() throws IOException, ServletException;
   }
