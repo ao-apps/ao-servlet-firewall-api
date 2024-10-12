@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2018, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -109,8 +109,14 @@ public interface FirewallContext {
   // TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
   void setAttribute(String name, Object object, Runnable runnable) throws IOException, ServletException;
 
+  /**
+   * Calls the given matcher.
+   */
   Matcher.Result call(Matcher matcher) throws IOException, ServletException;
 
+  /**
+   * Calls the given action.
+   */
   Action.Result call(Action action) throws IOException, ServletException;
 
   // TODO: A way to wrap request/response while calling a callable, useful for noSession but while ensuring
