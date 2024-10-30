@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,14 +27,13 @@ package com.aoapps.servlet.firewall.api;
  * The parent interface of both {@link Matcher} and {@link Action}.  No other
  * sub-interfaces are expected, and no direct implementations of this interface
  * are expected.
- * <p>
- * Please note that a rule can be both a {@link Matcher} and a {@link Action}.
+ *
+ * <p>Please note that a rule can be both a {@link Matcher} and a {@link Action}.
  * When it is both, its {@link Matcher} aspect is handled before its {@link Action}.
  * At this time none of the stock rules are implemented in this fashion.  This
  * type of pattern begins to resemble "routes", which are beyond the scope of
  * "firewall" and already exist in too many forms within the Java web application
- * development world.
- * </p>
+ * development world.</p>
  */
 @SuppressWarnings("MarkerInterface")
 public interface Rule {// Expected marker interface

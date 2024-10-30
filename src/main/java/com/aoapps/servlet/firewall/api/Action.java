@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -33,14 +33,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * An action is a rule that has side-effects.  It has access to the
  * {@link HttpServletResponse} and {@link FilterChain} of the request.
- * <p>
- * It is possible for actions to have nested rules (including both matchers and/or actions).
+ *
+ * <p>It is possible for actions to have nested rules (including both matchers and/or actions).
  * This might be most appropriate when an action wraps the request or response objects before
- * performing additional rules, such as a "noSession" implementation might do.
- * </p>
- * <p>
- * TODO: actions should be in own submodule?
- * </p>
+ * performing additional rules, such as a "noSession" implementation might do.</p>
+ *
+ * <p>TODO: actions should be in own submodule?</p>
  */
 @FunctionalInterface
 @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")

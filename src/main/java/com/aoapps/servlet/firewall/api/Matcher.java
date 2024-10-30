@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,23 +30,18 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Matches {@link HttpServletRequest servlet requests}.
- * <p>
- * A matcher must not have any side-effects on the context, request, or response.
+ *
+ * <p>A matcher must not have any side-effects on the context, request, or response.
  * It may only have side-effects outside of the request processing, such as internal statistics on its own use.
- * Statistics providing rules, however, should be implemented as {@link Action.Result#CONTINUE non-terminating} {@link Action actions}.
- * </p>
- * <p>
- * It is possible for matchers to have nested rules (including both matchers and/or actions).
- * </p>
- * <p>
- * TODO: Include pathInfo in servletPath regarding path space lookups?
- * </p>
- * <p>
- * TODO: matchers should be in own submodule?
- * </p>
- * <p>
- * TODO: Is this redundant with https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/web/util/matcher/package-summary.html?
- * </p>
+ * Statistics providing rules, however, should be implemented as {@link Action.Result#CONTINUE non-terminating} {@link Action actions}.</p>
+ *
+ * <p>It is possible for matchers to have nested rules (including both matchers and/or actions).</p>
+ *
+ * <p>TODO: Include pathInfo in servletPath regarding path space lookups?</p>
+ *
+ * <p>TODO: matchers should be in own submodule?</p>
+ *
+ * <p>TODO: Is this redundant with https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/web/util/matcher/package-summary.html?</p>
  */
 @FunctionalInterface
 @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")

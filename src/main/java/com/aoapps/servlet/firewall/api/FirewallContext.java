@@ -30,10 +30,9 @@ import javax.servlet.ServletException;
 /**
  * Invocation of {@link Rule rules} must be done through the firewall context.
  * This is done to support firewall hooks, such as TRACE.
- * <p>
- * As firewall rule traversal is performed on a single thread on a per-request basis,
- * implementations are not necessarily thread-safe.
- * </p>
+ *
+ * <p>As firewall rule traversal is performed on a single thread on a per-request basis,
+ * implementations are not necessarily thread-safe.</p>
  */
 // TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
 public interface FirewallContext {
