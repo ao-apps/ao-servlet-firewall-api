@@ -111,45 +111,6 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
 
   <profiles>
     <profile>
-      <id>offlineLinks</id><activation><file><exists>src/main/java</exists></file></activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>unpack.offlineLinks</id><phase>${unpack.offlineLinks.phase}</phase><goals><goal>unpack</goal></goals>
-                <configuration>
-                  <artifactItems>
-                    <!-- Direct -->
-                    <!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
-                    <artifactItem>
-                      <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><classifier>javadoc</classifier>
-                      <includes>element-list, package-list</includes>
-                      <outputDirectory>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</outputDirectory>
-                    </artifactItem>
-                  </artifactItems>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <offlineLinks combine.children="append">
-                <!-- Direct -->
-                <!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
-                <offlineLink>
-                  <url>https://javadoc.io/doc/com.github.spotbugs/spotbugs-annotations/${com.github.spotbugs:spotbugs-annotations:jar.version}/</url>
-                  <location>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</location>
-                </offlineLink>
-              </offlineLinks>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
       <id>release</id>
       <properties>
         <!--
@@ -202,9 +163,6 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
     <dependencies>
       <!-- Direct -->
       <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
-      <dependency>
-        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.9.2</version>
-      </dependency>
       <!-- Imports -->
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
@@ -218,10 +176,6 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
     <!-- Direct -->
     <dependency>
       <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
-      <optional>true</optional>
     </dependency>
   </dependencies>
 </project>

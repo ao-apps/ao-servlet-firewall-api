@@ -1,6 +1,6 @@
 /*
  * ao-servlet-firewall-api - Base API for servlet-based application request filtering.
- * Copyright (C) 2018, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,6 @@
 
 package com.aoapps.servlet.firewall.api;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -41,7 +40,6 @@ import javax.servlet.http.HttpServletResponse;
  * <p>TODO: actions should be in own submodule?</p>
  */
 @FunctionalInterface
-@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public interface Action extends Rule {
 
   /**
