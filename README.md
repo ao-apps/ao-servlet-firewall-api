@@ -23,7 +23,7 @@ Base API for servlet-based application request filtering.
 * [Project Home](https://oss.aoapps.com/servlet-firewall/api/)
 * [Changelog](https://oss.aoapps.com/servlet-firewall/api/changelog)
 * [API Docs](https://oss.aoapps.com/servlet-firewall/api/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-servlet-firewall-api)
+* [Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-servlet-firewall-api)
 * [GitHub](https://github.com/ao-apps/ao-servlet-firewall-api)
 
 ## Features
