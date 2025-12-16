@@ -8,14 +8,14 @@
 [![semantic versioning: 2.0.0](https://oss.aoapps.com/ao-badges/semver-2.0.0.svg)](https://semver.org/spec/v2.0.0.html)
 [![license: LGPL v3](https://oss.aoapps.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-[![Build](https://github.com/ao-apps/ao-servlet-firewall-api/actions/workflows/build.yml/badge.svg?branch=javaee)](https://github.com/ao-apps/ao-servlet-firewall-api/actions?query=workflow%3ABuild)
+[![Build](https://github.com/ao-apps/ao-servlet-firewall-api/actions/workflows/build.yml/badge.svg?branch=jakartaee)](https://github.com/ao-apps/ao-servlet-firewall-api/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-servlet-firewall-api/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-servlet-firewall-api)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=alert_status)](https://sonarcloud.io/dashboard?branch=javaee&id=com.aoapps%3Aao-servlet-firewall-api)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=ncloc)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=ncloc)  
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Reliability)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=security_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Security)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Maintainability)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=coverage)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Coverage)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=alert_status)](https://sonarcloud.io/dashboard?branch=jakartaee&id=com.aoapps%3Aao-servlet-firewall-api)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=ncloc)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=security_rating)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps%3Aao-servlet-firewall-api&metric=coverage)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps%3Aao-servlet-firewall-api&metric=Coverage)
 
 Base API for servlet-based application request filtering.
 
