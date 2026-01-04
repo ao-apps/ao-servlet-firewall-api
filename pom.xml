@@ -39,6 +39,9 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://oss.aoapps.com/">AO OSS</a>
 / <a target="${javadoc.target}" href="https://oss.aoapps.com/servlet-firewall/">Servlet Firewall</a>
 / <a target="${javadoc.target}" href="${project.url}">API</a>]]></javadoc.breadcrumbs>
+    <!-- Jakarta EE 10 -->
+    <javaee.version>10</javaee.version>
+    <javadoc.link.javaee>${javadoc.link.jakartaee.10}</javadoc.link.javaee>
     <!-- TODO: Implement tests -->
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
@@ -131,42 +134,16 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
         <org.apache.maven.plugins.maven-javadoc-plugin.version>${org.apache.maven.plugins.maven-javadoc-plugin.version.compat}</org.apache.maven.plugins.maven-javadoc-plugin.version>
         <copy-element-list-to-package-list-before-javadoc.phase>prepare-package</copy-element-list-to-package-list-before-javadoc.phase>
       </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.felix</groupId><artifactId>maven-bundle-plugin</artifactId>
-            <configuration>
-              <instructions>
-                <!--
-                  Releases use "Automatic-Module-Name" instead of "module-info.java"
-                  since has direct dependencies that are not yet modularized:
-                  javax.servlet-api-3.1.0.jar
-                -->
-                <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
-                <Private-Package>!.</Private-Package>
-              </instructions>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId>
-            <configuration>
-              <excludes>
-                <exclude>**/module-info.class</exclude>
-              </excludes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
   </profiles>
 
   <dependencyManagement>
     <dependencies>
       <!-- Direct -->
-      <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
+      <!-- jakartaee-web-profile-bom: <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId> -->
       <!-- Imports -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
+        <groupId>com.aoapps</groupId><artifactId>jakartaee-web-profile-bom</artifactId><version>10.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -176,7 +153,7 @@ along with ao-servlet-firewall-api.  If not, see <https://www.gnu.org/licenses/>
   <dependencies>
     <!-- Direct -->
     <dependency>
-      <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
+      <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId>
     </dependency>
   </dependencies>
 </project>
