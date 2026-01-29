@@ -41,7 +41,7 @@ public interface FirewallContext {
    *
    * @param name    The name of the attribute.
    *
-   * @param object  When {@code null}, this is the equivalent of calling {@link #removeAttribute(java.lang.String)}
+   * @param object  When {@code null}, this is the equivalent of calling {@link FirewallContext#removeAttribute(java.lang.String)}
    */
   void setAttribute(String name, Object object);
 
@@ -56,7 +56,7 @@ public interface FirewallContext {
 
   /**
    * Removes a firewall context attribute.  This is the same as calling
-   * {@link #setAttribute(java.lang.String, java.lang.Object)} with a {@code null}
+   * {@link FirewallContext#setAttribute(java.lang.String, java.lang.Object)} with a {@code null}
    * object.
    *
    * @param name    The name of the attribute.
@@ -79,7 +79,7 @@ public interface FirewallContext {
    *
    * @param name    The name of the attribute.
    *
-   * @param object  When {@code null}, this is the equivalent of calling {@link #removeAttribute(java.lang.String)}
+   * @param object  When {@code null}, this is the equivalent of calling {@link FirewallContext#removeAttribute(java.lang.String)}
    */
   // TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
   // TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
@@ -99,7 +99,7 @@ public interface FirewallContext {
    *
    * @param name    The name of the attribute.
    *
-   * @param object  When {@code null}, this is the equivalent of calling {@link #removeAttribute(java.lang.String)}
+   * @param object  When {@code null}, this is the equivalent of calling {@link FirewallContext#removeAttribute(java.lang.String)}
    */
   // TODO: Make a Firewall.Scope, Firewall.Context, and Firewall.Attribute that extends Scope, much like Scope.Request and Scope.REQUEST
   // TODO: Worth this in the API?  It's easy enough to just get value and set back on try/finally.  Wait to see how many times we use this.
